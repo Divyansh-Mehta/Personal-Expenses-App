@@ -21,14 +21,14 @@ class MyApp extends StatelessWidget {
         errorColor: Colors.red,
         fontFamily: "QuickSand",
         textTheme: ThemeData.light().textTheme.copyWith(
-              headline6: TextStyle(
+              headline6: const TextStyle(
                 fontFamily: "openSans",
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
-              button: TextStyle(color: Colors.white),
+              button: const TextStyle(color: Colors.white),
             ),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
             fontFamily: "OpenSans",
             fontSize: 20,
@@ -96,22 +96,22 @@ class _MyHomePageState extends State<MyHomePage> {
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
     final PreferredSizeWidget appBar = Platform.isIOS
         ? CupertinoNavigationBar(
-            middle: Text("Personal Expenses"),
+            middle: const Text("Personal Expenses"),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 GestureDetector(
-                  child: Icon(CupertinoIcons.add),
+                  child: const Icon(CupertinoIcons.add),
                   onTap: () => _startAddNewTransaction(context),
                 )
               ],
             ),
           )
         : AppBar(
-            title: Text("Personal Expenses"),
+            title: const Text("Personal Expenses"),
             actions: <Widget>[
               IconButton(
-                icon: Icon(Icons.add),
+                icon: const Icon(Icons.add),
                 onPressed: () => _startAddNewTransaction(context),
               ),
             ],
@@ -182,7 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
             appBar: appBar,
             body: pageBody,
             floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
               onPressed: () => _startAddNewTransaction(context),
             ),
             floatingActionButtonLocation:
